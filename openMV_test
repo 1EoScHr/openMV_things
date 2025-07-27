@@ -1,0 +1,18 @@
+# openMV test on VisionBoard
+
+"""
+LED:  三色LED灯珠: 有两种调用，分别是pyb.LED与machine.LED中，
+                    前者只能用0、1、2，后者只能用宏定义（LED_RED）。
+        电源灯旁的用户LED用法暂时未知。
+"""
+
+"""
+# camera:   用sensor库，每创建一个新工程都自动会有，但是有两点需要优化，
+            一是需要垂直翻转，用sensor.set_vflip()
+            二是需要更大分辨率，用的摄像头是OV5640，理应支持到2k，但可能内存有限，
+                最多到sensor.set_framesize(sensor.SVGA)这一档分辨率（800x600）
+"""
+import pyb
+
+while True:
+    print(pyb.micros())
